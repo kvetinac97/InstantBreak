@@ -1,0 +1,29 @@
+name: InstantBreak
+main: kvetinac97\MainClass
+api: 1.12.0
+load: STARTUP
+description: Tap and break!
+version: 1.0.0
+author: kvetinac97
+
+commands:
+  ib-on:
+    description: Enable InstantBreak
+    usage: "/ib-on"
+    permission: ib.on
+  ib-off:
+    description: Disable InstantBreak
+    usage: "/ib-off"
+    permission: ib.off
+
+permissions:
+   
+  ib.on:
+   default: op
+   description: "Can enable InstantBreak"
+  ib.off:
+   default: op
+   description: "Can disable InstantBreak"
+  ib.use:
+   default: op
+   description: "Can use InstantBreak"
