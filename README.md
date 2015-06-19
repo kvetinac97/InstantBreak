@@ -22,3 +22,6 @@ InstantBreak is PocketMine-MP plugin
   <i> (this shovel has silk touch) </i>
 
 <h4>If you found any bugs write them to the [Issues] section</h4>
+
+<b>Known bug: </b>=> If you hold an item and you haven't got permission you're send No Permission MESSAGE
+<i>Fixed in 1.0.1:</i> => There aren't any annoying InstantBreaking DISABLED Tips anymore!
