@@ -12,6 +12,7 @@ InstantBreak is PocketMine-MP plugin
   b) ib.off
    (allow command /ib-off (it removes Iron Shovel from your inventory [if isn't damaged])<br>
   c) ib.use (allow InstantBreaking blocks with Iron Shovel)<br>
+  d) ib (for command /ib-on, /ib-off and for using)
   
 <h5>3) Login to your server and: </h5>
 
@@ -28,3 +29,5 @@ InstantBreak is PocketMine-MP plugin
 <i>Fixed in 1.0.1:</i> => There aren't any annoying InstantBreaking DISABLED Tips anymore!
 
 <i>Fixed in 1.0.2:</i> => There aren't any annoying NO Permission MESSAGES when holding items anymore!
+
+<i>Added in 1.0.3:</i> => New permission ib for /ib-on, /ib-off and using InstantBreaking all!
