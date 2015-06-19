@@ -64,11 +64,12 @@ $player->sendTip("§aInstantBreaking ENABLED!");
 
 public function onTouch (PlayerInteractEvent $event) {
 
-if ($event->getPlayer()->hasPermission("ib.use")) {
 $item = $event->getItem();
 $id = $item->getId();
 
 if ($id === 256) {
+
+if ($event->getPlayer()->hasPermission("ib.use")) {
 
 $block = $event->getBlock();
 $x = $block->getX();
