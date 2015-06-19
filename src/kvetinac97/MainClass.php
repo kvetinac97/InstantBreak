@@ -60,7 +60,6 @@ $player = $event->getPlayer();
 $player->sendTip("§aInstantBreaking ENABLED!");
 }
 }
-}
 
 public function onTouch (PlayerInteractEvent $event) {
 
