@@ -50,7 +50,6 @@ return true;}
 
 public function onPlayerItemHeldEvent (PlayerItemHeldEvent $event) {
 
-if ($event->getPlayer()->hasPermission("ib.use")) {
 $item = $event->getItem();
 $id = $item->getId();
 
@@ -78,7 +77,7 @@ $z = $block->getZ();
 $level = $block->getLevel();
 $id = $block->getId();
 
-$level->dropItem(new Vector3($x,$y,$z), Item::get($id));
+$level->dropItem(new Vector3($x,$y,$z), Item::get($id:$block->getDamage()));
 $level->setBlock(new Vector3($x,$y,$z), Block::get(0));
 
 }
