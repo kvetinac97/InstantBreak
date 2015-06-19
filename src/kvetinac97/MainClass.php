@@ -60,10 +60,6 @@ $player = $event->getPlayer();
 
 $player->sendTip("§aInstantBreaking ENABLED!");
 }
-else {
-$player = $event->getPlayer();
-$player->sendTip("§cInstantBreaking DISABLED!");
-}
 }
 }
 
