@@ -3,7 +3,7 @@ main: kvetinac97\MainClass
 api: 1.12.0
 load: STARTUP
 description: Tap and break!
-version: 1.0.2
+version: 1.0.3
 author: kvetinac97
 
 commands:
@@ -18,6 +18,9 @@ commands:
 
 permissions:
    
+  ib:
+   default: op
+   description: "Top InstantBreak permission node"
   ib.on:
    default: op
    description: "Can enable InstantBreak"
