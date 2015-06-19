@@ -23,5 +23,8 @@ InstantBreak is PocketMine-MP plugin
 
 <h4>If you found any bugs write them to the [Issues] section</h4>
 
-<b>Known bug: </b>=> If you hold an item and you haven't got permission you're send No Permission MESSAGE
+<b>Known bugs: </b>=> The Silk Touch doesn't work properly (there isn't implemented damage of an item)
+
 <i>Fixed in 1.0.1:</i> => There aren't any annoying InstantBreaking DISABLED Tips anymore!
+
+<i>Fixed in 1.0.2:</i> => There aren't any annoying NO Permission MESSAGES when holding items anymore!
