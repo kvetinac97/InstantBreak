@@ -81,10 +81,10 @@ $level->dropItem(new Vector3($x,$y,$z), Item::get($id:$block->getDamage()));
 $level->setBlock(new Vector3($x,$y,$z), Block::get(0));
 
 }
-}
 else {
 $player = $event->getPlayer();
 $player->sendPopup("§cYou don't have permissions for this!");
+}
 }
 }
 }
