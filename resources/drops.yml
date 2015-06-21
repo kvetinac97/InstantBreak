@@ -1,0 +1,384 @@
+---
+#Write your custom Block Drops on "touch" InstantBreaking
+#If you want blocks to drop like without any InstantBreaking, don't change anything
+#If you write bad ID, block won't drop anything
+#Currently supports all blocks from Creative inventory + some additions
+#If your item has damage, write it under block:
+#If you want to drop any specified amount of items (2,3,4...), write it under damage/block:
+#If you don't want block to drop anything, set ID 0 (if you set Count to 0, it will still drop 1 amount)
+#Orange Wool: 35
+#Orange Wool_Damage: 1
+#Orange Wool_Count: 3
+
+#Stone-blocks
+
+Stone: 4
+Granite: 1
+Granite_Damage: 1
+Polished Granite: 1
+Polished Granite_Damage: 2
+Diorite: 1
+Diorite_Damage: 3
+Polished Diorite: 1
+Polished Diorite_Damage: 4
+Andesite: 1
+Andesite_Damage: 5
+Polished Andesite: 1
+Polished Andesite_Damage: 6
+
+Grass: 2
+Dirt: 3
+Podzol: 3
+Podzol_Damage: 2
+Cobblestone: 4
+
+#Wood Planks
+
+Oak Wood Planks: 5
+Spruce Wood Planks: 5
+Spruce Wood Planks_Damage: 1
+Birch Wood Planks: 5
+Birch Wood Planks_Damage: 2
+Jungle Wood Planks: 5
+Jungle Wood Planks_Damage: 3
+Acacia Wood Planks: 5:4
+Acacia Wood Planks_Damage: 4
+Dark Oak Wood Planks: 5
+Dark Oak Wood Planks_Damage: 5
+
+#Saplings
+
+Oak Sapling: 6
+Spruce Sapling: 6
+Spruce Sapling_Damage: 1
+Birch Sapling: 6
+Birch Sapling_Damage: 2
+Jungle Sapling: 6:3
+Jungle Sapling: 3
+Acacia Sapling: 6
+Acacia Sapling_Damage: 4
+Dark Oak Sapling: 6
+Dark Oak Sapling_Damage: 5
+
+Bedrock: 0
+Sand: 12
+Red Sand: 12
+Red Sand_Damage: 1
+Gravel: 13
+Gold Ore: 14
+Iron Ore: 15
+Coal Ore: 263
+
+#Wood
+
+Oak Wood: 17
+Spruce Wood: 17
+Spruce Wood_Damage: 1
+Birch Wood: 17
+Birch Wood_Damage: 2
+Jungle Wood: 17
+Jungle Wood_Damage: 3
+Acacia Wood: 162
+Dark Oak Wood: 162
+Dark Oak Wood_Damage: 1
+
+#Leaves
+
+Oak Leaves: 0
+Spruce Leaves: 0
+Birch Leaves: 0
+Jungle Leaves: 0
+Acacia Leaves: 0
+Dark Oak Leaves: 0
+
+Sponge: 19
+Glass: 0
+Lapis Ore: 351
+Lapis Ore_Damage: 4
+Lapis Block: 22
+Sandstone: 24
+Chiseled Sandstone: 24
+Chiseled Sandstone_Damage: 1
+Smooth Sandstone: 24
+Smooth Sandstone_Damage: 2
+Bed Block: 355
+Powered Rail: 27
+Cobweb: 30
+Tall Grass: 31
+Tall Grass_Damage: 1
+Fern: 31
+Fern_Damage: 2
+Dead Bush: 32
+
+#Wools
+
+White Wool: 35
+Orange Wool: 35
+Orange Wool_Damage: 1
+Magenta Wool: 35
+Magenta Wool_Damage: 2
+Light Blue Wool: 35
+Light Blue Wool_Damage: 3
+Yellow Wool: 35
+Yellow Wool_Damage: 4
+Lime Wool: 35
+Lime Wool_Damage: 5
+Pink Wool: 35
+Pink Wool_Damage: 6
+Gray Wool: 35
+Gray Wool_Damage: 7
+Light Gray Wool: 35
+Light Gray Wool_Damage: 8
+Cyan Wool: 35
+Cyan Wool_Damage: 9
+Purple Wool: 35
+Purple Wool_Damage: 10
+Blue Wool: 35
+Blue Wool_Damage: 11
+Brown Wool: 35
+Brown Wool_Damage: 12
+Green Wool: 35
+Green Wool_Damage: 13
+Red Wool: 35
+Red Wool_Damage: 14
+Black Wool: 35
+Black Wool_Damage: 15
+
+# Flowers
+
+Dandelion: 37
+Poppy: 38
+Blue Orchid: 38
+Blue Orchid_Damage: 1
+Allium: 38
+Allium_Damage: 2
+Azure Bluet: 38
+Azure Bluet_Damage: 3
+Red Tulip: 38
+Red Tulip_Damage: 4
+Orange Tulip: 38
+Orange Tulip_Damage: 5
+White Tulip: 38
+White Tulip_Damage: 6
+Pink Tulip: 38
+Pink Tulip_Damage: 7
+Oxeye Daisy: 38
+Oxeye Daisy_Damage: 8
+
+Brown Mushroom: 39
+Red Mushroom: 40
+Gold Block: 41
+Iron Block: 42
+Double Stone Slab: 43
+
+#Stone blocks slabs
+
+Stone Slab: 44
+Sandstone Slab: 44
+Sandstone Slab_Damage: 1
+Cobblestone Slab: 44
+Cobblestone Slab_Damage: 3
+Brick Slab: 44
+Brick Slab_Damage: 4
+Stone Brick Slab: 44
+Stone Brick Slab_Damage: 5
+Quartz Slab: 44
+Quartz Slab_Damage: 7
+
+Bricks: 45
+TNT: 46
+Bookshelf: 47
+Moss Stone: 48
+Obsidian: 49
+Torch: 50
+Monster Spawner: 52
+Wood Stairs: 53
+Chest: 54
+Diamond Ore: 264
+Diamond Block: 57
+Crafting Table: 58
+Furnace: 61
+Sign Post: 323
+Wood Door Block: 324
+Iron Door Block: 325
+Ladder: 65
+Rail: 66
+Cobblestone Stairs: 67
+Wall Sign: 323
+Redstone Ore: 73
+Glowing Redstone Ore: 74
+Snow Layer: 78
+Ice: 79
+Snow Block: 80
+Cactus: 81
+Clay Block: 82
+Sugar Canes: 338
+
+#Fences
+
+Oak Fence: 85
+Spruce Fence: 85
+Spruce Fence_Damage: 1
+Birch Fence: 85
+Birch Fence_Damage: 2
+Jungle Fence: 85
+Jungle Fence_Damage: 3
+Acacia Fence: 85
+Acacia Fence_Damage: 4
+Dark Oak Fence: 85
+Dark Oak Fence_Damage: 5
+
+Netherrack: 87
+Glowstone: 348
+Glowstone_Count: 3
+Jack o'Lantern: 91
+Cake Block: 354
+Trapdoor: 96
+
+#StoneBricks
+
+Stone Bricks: 98
+Mossy Stone Bricks: 98
+Mossy Stone Bricks_Damage: 1
+Cracked Stone Bricks: 98
+Cracked Stone Bricks_Damage: 2
+Chiseled Stone Bricks: 98
+Chiseled Stone Bricks_Damage: 3
+
+Iron Bars: 101
+Glass Pane: 102
+Melon Block: 103
+Vines: 106
+
+#Fence Gates
+
+Oak Fence Gate: 107
+Spruce Fence Gate: 183
+Birch Fence Gate: 184
+Jungle Fence Gate: 185
+Dark Oak Fence Gate: 186
+Acacia Fence Gate: 187
+
+Brick Stairs: 108
+Stone Brick Stairs: 109
+Mycelium: 110
+Lily Pad: 111
+Nether Bricks: 112
+Nether Bricks Stairs: 114
+End Portal Frame: 120
+End Stone: 121
+Sandstone Stairs: 128
+Emerald Ore: 388
+Emerald Block: 133
+
+#XXX WOODEN STAIRS
+
+Spruce Wood Stairs: 134
+Birch Wood Stairs: 135
+Jungle Wood Stairs: 136
+Acacia Wood Stairs: 163
+Dark Oak Wood Stairs: 164
+
+Cobblestone Wall: 139
+Mossy Cobblestone Wall: 139
+Mossy Cobblestone Wall_Damage: 1
+Redstone Block: 152
+Quartz Block: 155
+Chiseled Quartz Block: 155
+Chiseled Quartz Block_Damage: 1
+Quartz Pillar: 155
+Quartz Pillar_Damage: 2
+Quartz Stairs: 156
+
+#Wooden Slabs
+
+Oak Wooden Slab: 158
+Spruce Wooden Slab: 158
+Spruce Wooden Slab_Damage: 1
+Birch Wooden Slab: 158
+Birch Wooden Slab_Damage: 2
+Jungle Wooden Slab: 158
+Jungle Wooden Slab_Damage: 3
+Acacia Wooden Slab: 158
+Acacia Wooden Slab_Damage: 4
+Dark Oak Wooden Slab: 158
+Dark Oak Wooden Slab_Damage: 5
+
+#Stained Clay
+
+White Stained Clay: 159
+Orange Stained Clay: 159
+Orange Stained Clay_Damage: 1
+Magenta Stained Clay: 159
+Magenta Stained Clay_Damage: 2
+Light Blue Stained Clay: 159
+Light Blue Stained Clay_Damage: 3
+Yellow Stained Clay: 159
+Yellow Stained Clay_Damage: 4
+Lime Stained Clay: 159
+Lime Stained Clay_Damage: 5
+Pink Stained Clay: 159
+Pink Stained Clay_Damage: 6
+Gray Stained Clay: 159
+Gray Stained Clay_Damage: 7
+Light Gray Stained Clay: 159
+Lifht Gray Stained Clay_Damage: 8
+Cyan Stained Clay: 159
+Cyan Stained Clay_Damage: 9
+Purple Stained Clay: 159
+Purple Stained Clay_Damage: 10
+Blue Stained Clay: 159
+Blue Stained Clay_Damage: 11
+Brown Stained Clay: 159
+Brown Stained Clay_Damage: 12
+Green Stained Clay: 159
+Green Stained Clay_Damage: 13
+Red Stained Clay: 159
+Red Stained Clay_Damage: 14
+Black Stained Clay: 159
+Black Stained Clay_Damage: 15
+
+Hay Bale: 170
+
+#Carpets
+
+White Carpet: 171
+Orange Carpet: 171
+Orange Carpet_Damage: 1
+Magenta Carpet: 171
+Magenta Carpet_Damage: 2
+Light Blue Carpet: 171
+Light Blue Carpet_Damage: 3
+Yellow Carpet: 171
+Yellow Carpet_Damage: 4
+Lime Carpet: 171
+Lime Carpet_Damage: 5
+Pink Carpet: 171
+Pink Carpet_Damage: 6
+Gray Carpet: 171
+Gray Carpet_Damage: 7
+Light Gray Carpet: 171
+Light Gray Carpet_Damage: 8
+Cyan Carpet: 171
+Cyan Carpet_Damage: 9
+Purple Carpet: 171
+Purple Carpet_Damage: 10
+Blue Carpet: 171
+Blue Carpet_Damage: 11
+Brown Carpet: 171
+Brown Carpet_Damage: 12
+Green Carpet: 171
+Green Carpet_Damage: 13
+Red Carpet: 171
+Red Carpet_Damage: 14
+Black Carpet: 171
+Black Carpet_Damage: 15
+
+Hardened Clay: 172
+Coal Block: 173
+Grass Path: 198
+Stonecutter: 245
+Nether Reactor: 247
+# © 2015 kvetinac97
+#===ALL RIGHTS RESERVED===
+...
