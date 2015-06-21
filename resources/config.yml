@@ -20,7 +20,7 @@ touch: "true"
 #Supports only Shovels (bug with grass) and Pickaxes (not bugs)
 #Two same IDs aren't supported
 
-silktouch-item: 256
-touch-item: 269
+silktouch-item: 257
+touch-item: 278
 
 ...
