@@ -1,0 +1,26 @@
+---
+#If there is any error in config, plugin'll repair it with default values 
+#Version (write 1)
+
+version: "1"
+
+#Enable-commands /ib-on and /ib-off
+#Supports only boolean values (true, false)
+
+enable-commands: "true"
+
+#Set if silktouch/normal touch is enabled
+#Silktouch drops the same block you break (leaves, glass...)
+#Touch drops items what are written in drops.yml
+
+silktouch: "false"
+touch: "true"
+
+#Set items for silktouch/touch
+#Supports only Shovels (bug with grass) and Pickaxes (not bugs)
+#Two same IDs aren't supported
+
+silktouch-item: 256
+touch-item: 269
+
+...
