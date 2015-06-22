@@ -29,7 +29,7 @@ silktouch-item: "257"
 touch-item: "278"
 
 #Messages:
-#For color use {COLOR}, & or §
+#For color use & or §
 # Don't change {silktouch-item} or {touch-item}
 # &1 = dark blue      &7 = light gray
 # &2 = dark green     &8 = gray
