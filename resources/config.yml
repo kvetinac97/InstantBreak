@@ -1,46 +1,56 @@
-name: InstantBreak
-main: kvetinac97\Main
-api: [1.12.0]
-load: STARTUP
-description: Tap and break!
-version: 2.0.0
-author: kvetinac97
+---
+#If there is any error in config, plugin'll repair it with default values 
+#Version (write 1)
 
-commands:
-  ib-on:
-    description: Enable InstantBreak
-    usage: "/ib-on"
-    permission: ib.command.on
-  ib-off:
-    description: Disabled InstantBreak
-    usage: "/ib-off"
-    permission: ib.command.off
+version: "1"
 
-permissions:
-  ib: 
-     default: op
-     description: "Top InstantBreak permission node"
-     children:
-      ib.command:
-      default: op
-      description: "Allow all InstantBreak commands"
-      children:
-       ib.command.on:
-        default: op
-        description: "Can give yourself all types of shovels"
-       ib.command.off:
-        default: op
-        description: "Can remove all types of shovels from its inventory"
-      ib.use:
-       default: op
-       description: "Can use InstantBreak"
-       children:
-        ib.use.touch:
-         default: op
-         description: "Can break blocks with touch"
-        ib.use.silktouch:
-         default: op 
-         description: "Can break blocks with silktouch"
-      ib.unbreakable:
-       default: op
-       description: "Can break unbreakable blocks (like bedrock)" 
+#Enable-commands /ib-on and /ib-off
+#Supports only boolean values (true, false)
+
+enable-commands: "true"
+
+#Set if silktouch/normal touch is enabled
+#Silktouch drops the same block you break (leaves, glass...)
+#Touch drops items what are written in drops.yml
+
+silktouch: "false"
+touch: "true"
+
+#Set items for silktouch/touch
+# Wooden Shovel = 269, Wooden Pickaxe = 270
+# Stone Shovel = 273, Stone Pickaxe = 274
+# Iron Shovel = 256, Iron Pickaxe = 257
+# Gold Shovel = 284, Gold Pickaxe = 285
+# Diamond Shovel = 277, Diamond Pickaxe = 278
+#Supports only Shovels (bug with grass) and Pickaxes (not bugs)
+#Two same IDs aren't supported
+
+silktouch-item: "257"
+touch-item: "278"
+
+#Messages:
+#For color use {COLOR}, & or §
+# Don't change {silktouch-item} or {touch-item}
+# &1 = dark blue      &7 = light gray
+# &2 = dark green     &8 = gray
+# &3 = cyan           &9 = purple
+# &4 = dark red       &0 = black
+# &5 = violet         &a = light green
+# &6 = orange         &b = light blue
+# &c = red            &f = white
+# &d = pink           &l = bold
+# &e = yellow         &o = italic
+
+permission-ib-on-not-found: "&cYou don't have permission for command /ib-on!"
+permission-ib-off-not-found: "&cYou don't have permission for command /ib-off!"
+ib-on-enabled-msg: "&o&7Now hold {silktouch-item} or {touch-item} for InstantBreaking"
+ib-off-disabled-msg: "&o&7Disabled!"
+ib-silktouch-hold-enable: "&aInstantBreaking ENABLED! &o&7SilkTouch"
+ib-touch-hold-enable: "&aInstantBreaking ENABLED! &o&7Touch"
+ib-silktouch-hold-disable: "&cInstantBreaking DISABLED! &o&7SilkTouch"
+ib-touch-hold-disable: "&cInstantBreaking DISABLED! &o&7Touch"
+ib-not-enabled: "&7&oInstantBreaking isn't enabled! Use /ib-on"
+permission-ib-unbreakable-not-found: "&cYou don't have permission for InstantBreaking bedrock!"
+permission-ib-use-not-found: "&cYou don't have permission for InstantBreaking!"
+
+...
