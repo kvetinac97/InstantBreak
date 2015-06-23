@@ -4,11 +4,6 @@
 
 version: "1"
 
-#Enable-commands /ib-on and /ib-off
-#Supports only boolean values (true, false)
-
-enable-commands: "true"
-
 #Set if silktouch/normal touch is enabled
 #Silktouch drops the same block you break (leaves, glass...)
 #Touch drops items what are written in drops.yml
@@ -29,7 +24,7 @@ silktouch-item: "257"
 touch-item: "278"
 
 #Messages:
-#For color use & or §
+#For color use & or Â§
 # Don't change {silktouch-item} or {touch-item}
 # &1 = dark blue      &7 = light gray
 # &2 = dark green     &8 = gray
@@ -41,7 +36,6 @@ touch-item: "278"
 # &d = pink           &l = bold
 # &e = yellow         &o = italic
 
-commands-arent-enabled: "&cInstantBreaking isn't allowed on this server!"
 permission-ib-on-not-found: "&cYou don't have permission for command /ib-on!"
 permission-ib-off-not-found: "&cYou don't have permission for command /ib-off!"
 ib-on-enabled-msg: "&o&7Now hold {silktouch-item} or {touch-item} for InstantBreaking"
