@@ -41,6 +41,7 @@ touch-item: "278"
 # &d = pink           &l = bold
 # &e = yellow         &o = italic
 
+commands-arent-enabled: "&cInstantBreaking isn't allowed on this server!"
 permission-ib-on-not-found: "&cYou don't have permission for command /ib-on!"
 permission-ib-off-not-found: "&cYou don't have permission for command /ib-off!"
 ib-on-enabled-msg: "&o&7Now hold {silktouch-item} or {touch-item} for InstantBreaking"
@@ -51,6 +52,7 @@ ib-silktouch-hold-disable: "&cInstantBreaking DISABLED! &o&7SilkTouch"
 ib-touch-hold-disable: "&cInstantBreaking DISABLED! &o&7Touch"
 ib-not-enabled: "&7&oInstantBreaking isn't enabled! Use /ib-on"
 permission-ib-unbreakable-not-found: "&cYou don't have permission for InstantBreaking bedrock!"
-permission-ib-use-not-found: "&cYou don't have permission for InstantBreaking!"
-
-...
+permission-ib-use-silktouch-not-found: "&cYou don't have permission for silktouch InstantBreaking!"
+permission-ib-use-touch-not-found: "&cYou don't have permission for touch InstantBreaking!"
+ib-silktouch-not-enabled: "&cSilktouch InstantBreaking isn't avaible on that server!"
+...              
