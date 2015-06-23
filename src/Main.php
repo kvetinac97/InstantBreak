@@ -107,7 +107,6 @@ use pocketmine\utils\Config;
 
 public function onCommand(CommandSender $sender, Command $command, $label, array $args){
 
- if ($this->config->get("enable-commands") == "true") {
  if ($command->getName() == "ib-on"){
  if ($sender->hasPermission("ib.command.on")) {
 
@@ -164,18 +163,12 @@ public function onCommand(CommandSender $sender, Command $command, $label, array
  else {
   $tip = str_replace("&", "§", $this->config->get("permission-ib-off-not-found"));
  $sender->sendTip($tip);
+ return true;
  }      
+ return true;
  break;
  }
- return true;
-  }
-  elseif ($command->getName() == "ib-off" or $command->getName() == "ib-on") {
-  
-  $msg = str_replace("&", "§", $this->config->get("commands-arent-enabled"))
-  $sender->sendMessage($msg)
-  
-  }
-  }
+ }
 
 //Holding items -> sending Enabled/Disabled Messages
 //InstantBreaking SILKTOUCH/TOUCH enabled messages are send even
@@ -306,7 +299,7 @@ $id = $this->drops->get($event->getBlock()->getName());
 $damage = $this->drops->get($event->getBlock()->getName() . "_Damage");
 $count = $this->drops->get($event->getBlock()->getName() . "_Count");
  
-$event->getBlock()->getLevel()->dropItem(new Vector3($event->getBlock()->getX(),$event->getBlock()->getY(),$event->getBlock()->getZ()), Item::get($id, $damage, $count); 
+$event->getBlock()->getLevel()->dropItem(new Vector3($event->getBlock()->getX(),$event->getBlock()->getY(),$event->getBlock()->getZ()), Item::get($id, $damage, $count)); 
 }
 
 elseif ($event->getPlayer()->hasPermission("ib.unbreakable")) {
