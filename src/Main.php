@@ -1,6 +1,10 @@
 <?php
 namespace kvetinac97;
 
+//Author of plugin: kvetinac97
+//This is my first plugin
+//Don't forget to read README.md
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandExecutor;
 use pocketmine\command\CommandSender;
@@ -49,39 +53,36 @@ use pocketmine\utils\Config;
   $this->config->set("version", "1");
   $this->config->save();
  }
- if ($this->config->get("enable-commands") != "true" and $this->config->get("enable-commands") != "false") {
-  $this->config->set("enable-commands", "true"); 
-  $this->config->save();
- }
- 
- $accepted = "269";
- $accepted = "270";
- $accepted = "273";
- $accepted = "274";
- $accepted = "256";
- $accepted = "257";
- $accepted = "284";
- $accepted = "285";
- $accepted = "277";
- $accepted = "278";
- if ($this->config->get("silktouch-item") == $accepted) {
+ $a = "269";
+ $b = "270";
+ $c = "273";
+ $d = "274";
+ $e = "256";
+ $f = "257";
+ $g = "284";
+ $h = "285";
+ $i = "277";
+ $j = "278";
+ $k = $this->config->get("silktouch-item");
+ if ($k == $a or $k == $b or $k == $c or $k == $d or $k == $e or $k == $f or $k == $g or $k == $h or $k == $i or $k == $j) {
  $this->config->save();
  }
  else {  
   $this->config->set("silktouch-item", "257");
   $this->config->save();
  }
- $accepted = "269";
- $accepted = "270";
- $accepted = "273";
- $accepted = "274";
- $accepted = "256";
- $accepted = "257";
- $accepted = "284";
- $accepted = "285";
- $accepted = "277";
- $accepted = "278";
- if ($this->config->get("touch-item") == $accepted) {
+ $a = "269";
+ $b = "270";
+ $c = "273";
+ $d = "274";
+ $e = "256";
+ $f = "257";
+ $g = "284";
+ $h = "285";
+ $i = "277";
+ $j = "278";
+ $k = $this->config->get("silktouch-item");
+ if ($k == $a or $k == $b or $k == $c or $k == $d or $k == $e or $k == $f or $k == $g or $k == $h or $k == $i or $k == $j) {
  $this->config->save();
  }
  else {  
@@ -103,12 +104,13 @@ use pocketmine\utils\Config;
  }
   }
 
-//COMMANDS /ib-on, /ib-off //
+//COMMANDS /ib-on, /ib-off
 
 public function onCommand(CommandSender $sender, Command $command, $label, array $args){
 
  if ($command->getName() == "ib-on"){
  if ($sender->hasPermission("ib.command.on")) {
+ if ($this->players->get($sender->getName() . "_ib-on-used") == "false") {
 
   $silktouchitem = $this->config->get("silktouch-item");
   $touchitem = $this->config->get("touch-item");
@@ -130,22 +132,30 @@ public function onCommand(CommandSender $sender, Command $command, $label, array
   $sender->getInventory()->addItem(Item::get($silktouchitem));
   $sender->getInventory()->addItem(Item::get($touchitem));
   $this->players->set($sender->getName() . "_enabled", "true");
+  $this->players->set($sender->getName() . "_ib-on-used", "true");
+  $this->players->set($sender->getName() . "_ib-off-used", "false");
 
   $this->players->save();
  return true;
 }
+ else {
+ $msg = str_replace("&", "§", $this->config->get("ib-on-already-used"));
+ $sender->sendMessage($msg);
+ return true;
+ }
+ }
  else {
 
   $tip = str_replace("&", "§", $this->config->get("permission-ib-on-not-found")); 
   $sender->sendTip($tip);
 
  return true;
- break;
  }
+  break;
   }
-
  if ($command->getName() == "ib-off") {
- if ($sender->hasPermission("ib.off")){
+ if ($sender->hasPermission("ib.off")) {
+ if ($this->players->get($sender->getName() . "_ib-off-used") == "false") {
 
   $silktouchitem = $this->config->get("silktouch-item");
   $touchitem = $this->config->get("touch-item");
@@ -154,20 +164,27 @@ public function onCommand(CommandSender $sender, Command $command, $label, array
   $sender->sendMessage($msg);
   $sender->getInventory()->removeItem(Item::get($silktouchitem, null));
   $sender->getInventory()->removeItem(Item::get($touchitem, null));
-  $this->players->remove($sender->getName() . "_enabled")
-;
+  $this->players->remove($sender->getName() . "_enabled");
+  $this->players->set($sender->getName() . "_ib-on-used", "false");
+  $this->players->set($sender->getName() . "_ib-off-used", "true");
+$this->players->save();
   $this->players->set($sender->getName() . "ib-not-enabled-1", "false");
   $this->players->save();
  return true;
+ }
+ else {
+ $msg = str_replace("&", "§", $this->config->get("ib-off-already-used")); 
+ $sender->sendMessage($msg);
+ return true; 
+ }
  }
  else {
   $tip = str_replace("&", "§", $this->config->get("permission-ib-off-not-found"));
  $sender->sendTip($tip);
  return true;
  }      
- return true;
- break;
  }
+  break;
  }
 
 //Holding items -> sending Enabled/Disabled Messages
@@ -190,7 +207,7 @@ public function onCommand(CommandSender $sender, Command $command, $label, array
      $this->players->set($event->getPlayer()->getName() . "popup-enable-silktouch", "true");
      $this->players->save();
     }
-    elseif ($this->players->get($event->getPlayer()->getName() . "ib-not-enabled-1") == "true") {
+    elseif ($this->players->get($event->getPlayer()->getName() . "ib-not-enabled-1") == "false") {
      $msg = str_replace("&", "§", $this->config->get("ib-not-enabled"));
      $event->getPlayer()->sendMessage($msg);
      $this->players->set($event->getPlayer()->getName() . "ib-not-enabled-1", "true");
@@ -293,16 +310,23 @@ $event->getPlayer()->sendPopup($popup);
  if ($event->getPLayer()->hasPermission("ib.use.touch")) {
  $event->getBlock()->getLevel()->setBlock(new Vector3($event->getBlock()->getX(),$event->getBlock()->getY(),$event->getBlock()->getZ()), Block::get(0));
 
- if ($event->getBlock()->getId() != 7) {
+ if ($event->getBlock()->getId() != 7 and $event->getPlayer()->getGamemode() != "1" or $event->getPlayer()->getGamemode() != "3") {
 
 $id = $this->drops->get($event->getBlock()->getName());
 $damage = $this->drops->get($event->getBlock()->getName() . "_Damage");
-$count = $this->drops->get($event->getBlock()->getName() . "_Count");
+$cnt = $this->drops->get($event->getBlock()->getName() . "_Count");
  
-$event->getBlock()->getLevel()->dropItem(new Vector3($event->getBlock()->getX(),$event->getBlock()->getY(),$event->getBlock()->getZ()), Item::get($id, $damage, $count)); 
+ if ($cnt == "0") {
+ $cont = "1";
+ }
+ else {
+ $cont = $cnt;
+ }
+ 
+$event->getBlock()->getLevel()->dropItem(new Vector3($event->getBlock()->getX(),$event->getBlock()->getY(),$event->getBlock()->getZ()), Item::get($id, $damage, $cont)); 
 }
 
-elseif ($event->getPlayer()->hasPermission("ib.unbreakable")) {
+elseif ($event->getPlayer()->hasPermission("ib.unbreakable") and $event->getPlayer()->getGamemode() != "1" and $event->getPlayer()->getGamemode() != "3") {
 
 $event->getBlock()->getLevel()->dropItem(new Vector3($event->getBlock()->getX(),$event->getBlock()->getY(),$event->getBlock()->getZ()), Item::get(0));
 }
