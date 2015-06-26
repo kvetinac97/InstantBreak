@@ -24,7 +24,8 @@ silktouch-item: "257"
 touch-item: "278"
 
 #Messages:
-#For color use & or Â§
+#For color use & or §
+#If you want disable messages, write ""
 # Don't change {silktouch-item} or {touch-item}
 # &1 = dark blue      &7 = light gray
 # &2 = dark green     &8 = gray
@@ -38,6 +39,8 @@ touch-item: "278"
 
 permission-ib-on-not-found: "&cYou don't have permission for command /ib-on!"
 permission-ib-off-not-found: "&cYou don't have permission for command /ib-off!"
+ib-on-already-used: "&c You can't enable InstantBreak twice!"
+ib-off-already-used: "&c You can't disable InstantBreak twice!"
 ib-on-enabled-msg: "&o&7Now hold {silktouch-item} or {touch-item} for InstantBreaking"
 ib-off-disabled-msg: "&o&7Disabled!"
 ib-silktouch-hold-enable: "&aInstantBreaking ENABLED! &o&7SilkTouch"
@@ -49,4 +52,5 @@ permission-ib-unbreakable-not-found: "&cYou don't have permission for InstantBre
 permission-ib-use-silktouch-not-found: "&cYou don't have permission for silktouch InstantBreaking!"
 permission-ib-use-touch-not-found: "&cYou don't have permission for touch InstantBreaking!"
 ib-silktouch-not-enabled: "&cSilktouch InstantBreaking isn't avaible on that server!"
+ib-touch-not-enabled: "$cTouch InstantBreaking isn't avaible on that server!"
 ...              
