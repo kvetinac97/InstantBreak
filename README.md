@@ -1,8 +1,6 @@
-InstantBreak
- by @kvetinac97
+InstantBreak by @kvetinac97
 ======================================
-«Tap and break!
-»
+«Tap and break!»
 
 InstantBreak is PocketMine-MP plugin
 How it works?
