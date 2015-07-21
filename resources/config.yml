@@ -52,5 +52,5 @@ permission-ib-unbreakable-not-found: "&cYou don't have permission for InstantBre
 permission-ib-use-silktouch-not-found: "&cYou don't have permission for silktouch InstantBreaking!"
 permission-ib-use-touch-not-found: "&cYou don't have permission for touch InstantBreaking!"
 ib-silktouch-not-enabled: "&cSilktouch InstantBreaking isn't avaible on that server!"
-ib-touch-not-enabled: "$cTouch InstantBreaking isn't avaible on that server!"
+ib-touch-not-enabled: "&cTouch InstantBreaking isn't avaible on that server!"
 ...              
