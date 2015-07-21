@@ -5,7 +5,7 @@
 #Currently supports all blocks from Creative inventory + some additions
 #If your item has damage, write it under block:
 #If you want to drop any specified amount of items (2,3,4...), write it under damage/block:
-#If you don't want block to drop anything, set ID 0 (if you set Count to 0, it will still drop 1 amount)
+#If you don't want block to drop anything, set ID/Count 0
 #Orange Wool: 35
 #Orange Wool_Damage: 1
 #Orange Wool_Count: 3
@@ -29,7 +29,6 @@ Polished Andesite_Damage: 6
 Grass: 3
 Dirt: 3
 Podzol: 3
-Podzol_Damage: 2
 Cobblestone: 4
 
 #Wood Planks
