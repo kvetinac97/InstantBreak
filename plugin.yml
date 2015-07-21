@@ -3,7 +3,7 @@ main: kvetinac97\Main
 api: [1.12.0]
 load: STARTUP
 description: Tap and break!
-version: 2.0.0
+version: 2.1.0
 author: kvetinac97
 
 commands:
