@@ -66,7 +66,7 @@ use pocketmine\utils\Config;
   $this->config->set("silktouch-item", "257");
   $this->config->save();
  }
- $i = $this->config->get("silktouch-item");
+ $i = $this->config->get("touch-item");
  if (!(in_array($i, [269,270,273,274,256,257,284,285,277,278]))) {
   $this->config->set("touch-item", "278");
   $this->config->save();
