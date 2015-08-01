@@ -1,5 +1,6 @@
 InstantBreak by @kvetinac97
 ======================================
+WORKING ON UPDATE 3.0.0 with two new break-modes!
 «Tap and break!»
 
 InstantBreak is PocketMine-MP plugin
