@@ -1,36 +1,47 @@
 name: InstantBreak
 main: kvetinac97\Main
-api: [1.12.0]
+api: [1.13.0]
 load: STARTUP
 description: Tap and break!
-version: 2.1.0
+version: 2.2.0
 author: kvetinac97
 
 commands:
   ib-on:
     description: Enable InstantBreak
-    usage: "/ib-on"
+    usage: "/ib-on <player>"
     permission: ib.command.on
   ib-off:
     description: Disabled InstantBreak
-    usage: "/ib-off"
+    usage: "/ib-off <player>"
     permission: ib.command.off
 
 permissions:
   ib: 
+   default: op
+   description: "Top InstantBreak permission node"
+   children:
+    ib.command:
      default: op
-     description: "Top InstantBreak permission node"
+     description: "Allow all InstantBreak commands"
      children:
-      ib.command:
-      default: op
-      description: "Allow all InstantBreak commands"
       ib.command.on:
        default: op
-       description: "Can give yourself all types of shovels"
+       description: "Can enable InstantBreak for yourself"
       ib.command.off:
        default: op
-       description: "Can remove all types of shovels from its inventory"
-      ib.use:
+       description: "Can disable InstantBreak for yourself"
+    ib.other:
+     default: op
+     description: "Allow all InstantBreak commands for other players"
+     children:
+      ib.other.on:
+       default: op
+       description: "Allow enable InstantBreak for other players"
+      ib.other.off:
+       default: op
+       description: "Allow disable InstantBreak for other players"
+     ib.use:
        default: op
        description: "Can use InstantBreak"
        children:
@@ -40,6 +51,6 @@ permissions:
         ib.use.silktouch:
          default: op 
          description: "Can break blocks with silktouch"
-      ib.unbreakable:
+     ib.unbreakable:
        default: op
        description: "Can break unbreakable blocks (like bedrock)" 
