@@ -38,7 +38,7 @@ use pocketmine\utils\Config;
   $this->players = new Config($this->getDataFolder()."players.yml", Config::YAML);  
   $this->checkConfig();  
   $this->getLogger()->info(TextFormat::DARK_GREEN . "InstantBreaking enabled!");
-  $this->getLogger()->info(TextFormat::YELLOW . "Running version 2.0.0");
+  $this->getLogger()->info(TextFormat::YELLOW . "Running version 2.2.0");
   if ($this->config->get("silktouch") == "true"){
    Item :: addCreativeItem(Item :: get($this->config->get("silktouch-item"),0));
    }
@@ -57,16 +57,19 @@ use pocketmine\utils\Config;
 
  public function checkConfig() {
 
- if ($this->config->get("version") != "1") {
-  $this->config->set("version", "1");
+ if ($this->config->get("version") == "1") {
+  $this->config->set("version", "2");
+  $this->config->set("permission-ib-other-on-not-found","&cYou don't have permission for /ib-on » <other> «");
+  $this->config->set("permission-ib-other-off-not-found","&cYou don'z have permission for /ib-off » <other> «");
   $this->config->save();
+  $this->getLogger()->notice(TextFormat::AQUA."Config successfully updated from v1 to v2!");
  }
  $i = $this->config->get("silktouch-item");
  if (!(in_array($i, [269,270,273,274,256,257,284,285,277,278]))) {
   $this->config->set("silktouch-item", "257");
   $this->config->save();
  }
- $i = $this->config->get("touch-item");
+ $i = $this->config->get("silktouch-item");
  if (!(in_array($i, [269,270,273,274,256,257,284,285,277,278]))) {
   $this->config->set("touch-item", "278");
   $this->config->save();
@@ -91,7 +94,11 @@ use pocketmine\utils\Config;
 public function onCommand(CommandSender $sender, Command $command, $label, array $args){
 
  if ($command->getName() == "ib-on"){
- if ($sender->hasPermission("ib.command.on") and $sender instanceof Player) {
+ if ($sender->hasPermission("ib.command.on")) {
+ if ($sender instanceof Player){
+ if (isset($args[0]) and $sender->hasPermission("ib.other.on")){
+ $sender = $args[0];
+ }
  if ($this->players->get($sender->getName() . "_ib-on-used") == "false" || $this->players->get($sender->getName() . "_ib-on-used") == null) {
 
   $silktouchitem = $this->config->get("silktouch-item");
@@ -127,16 +134,24 @@ public function onCommand(CommandSender $sender, Command $command, $label, array
  }
  }
  else {
-
-  $tip = str_replace("&", "§", $this->config->get("permission-ib-on-not-found")); 
-  $sender->sendTip($tip);
-
+ $this->getLogger()->info(TextFormat::RED."IB isn't avaible for Console!");
  return true;
  }
-  break;
-  }
+ }
+ else {
+ $tip = str_replace("&", "§", $this->config->get("permission-ib-on-not-found")); 
+ if ($sender instanceof Player){
+ $sender->sendTip($tip);
+ }
+ return true;
+ }
+ }
  if ($command->getName() == "ib-off") {
- if ($sender->hasPermission("ib.off") and $sender instanceof Player) {
+ if ($sender->hasPermission("ib.off")) {
+ if (isset($args[0]) and $sender->hasPermission("ib.other.off")){
+ $sender = $args[0];
+ }
+if ($sender instanceof Player){
  if ($this->players->get($sender->getName() . "_ib-off-used") == "false" || $this->players->get($sender->getName() . "_ib-off-used") == null) {
 
   $silktouchitem = $this->config->get("silktouch-item");
@@ -161,14 +176,19 @@ $this->players->save();
  }
  }
  else {
+ $this->getLogger()->info(TextFormat::RED."IB isn't avaible for Console!");
+return true;
+ }
+ }
+ else {
   $tip = str_replace("&", "§", $this->config->get("permission-ib-off-not-found"));
+if ($sender instanceof Player){
  $sender->sendTip($tip);
+}
  return true;
- }      
  }
-  break;
  }
-
+}
 //Holding items -> sending Enabled/Disabled Messages
 
  public function onHold (PlayerItemHeldEvent $event) {
@@ -183,7 +203,7 @@ $this->players->save();
     $silktouchenabled = $this->players->get($event->getPlayer()->getName() . "_enabled");
     if ($silktouchenabled == "true" and $this->config->get("silktouch") == "true") {
      $popup = str_replace("&", "§", $this->config->get("ib-silktouch-hold-enable"));
-     $event->getPlayer()->sendPopup($popup);
+     $event->getPlayer()->sendPopup($popup,1);
      $this->players->set($event->getPlayer()->getName() . "popup-enable-silktouch", "true");
      $this->players->save();
     }
@@ -196,7 +216,7 @@ $this->players->save();
     }
     else {
      $popup = str_replace("&", "§", $this->config->get("permission-ib-use-silktouch-not-found"));
-     $event->getPlayer()->sendPopup($popup);
+     $event->getPlayer()->sendPopup(1,$popup);
     }
    }
    $touchid = $this->config->get("touch-item");
@@ -210,7 +230,7 @@ $this->players->save();
     $touchenabled = $this->players->get($event->getPlayer()->getName() . "_enabled");
     if ($touchenabled == "true" and $this->config->get("touch") == "true") {
      $popup = str_replace("&", "§", $this->config->get("ib-touch-hold-enable"));
-     $event->getPlayer()->sendPopup($popup);
+     $event->getPlayer()->sendPopup(1,$popup);
      $this->players->set($event->getPlayer()->getName() . "popup-enable-touch", "true");
      $this->players->save();
     }
@@ -223,20 +243,20 @@ $this->players->save();
     }
     else {
      $popup = str_replace("&", "§", $this->config->get("permission-ib-use-not-found"));
-     $event->getPlayer()->sendPopup($popup);
+     $event->getPlayer()->sendPopup(1,$popup);
     }
    }
    $id = $event->getItem()->getId();
    if ($id != $this->config->get("silktouch-item") and $id != $this->config->get("touch-item")) {
     if ($this->players->get($event->getPlayer()->getName() . "popup-enable-silktouch") == "true") {
      $popup = str_replace("&", "§", $this->config->get("ib-silktouch-hold-disable"));
-     $event->getPlayer()->sendPopup($popup);
+     $event->getPlayer()->sendPopup(1,$popup);
      $this->players->set($event->getPlayer()->getName() . "popup-enable-silktouch", "false");
      $this->players->save();
    }
    elseif ($this->players->get($event->getPlayer()->getName() . "popup-enable-touch") == "true") {
     $popup = str_replace("&", "§", $this->config->get("ib-touch-hold-disable"));
-    $event->getPlayer()->sendPopup($popup);
+    $event->getPlayer()->sendPopup(1,$popup);
     $this->players->set($event->getPlayer()->getName() . "popup-enable-touch", "false");
     $this->players->save();
    }
@@ -268,20 +288,20 @@ $event->getBlock()->getLevel()->dropItem(new Vector3($event->getBlock()->getX(),
 else {
 
 $popup = str_replace("&", "§", $this->config->get("permission-ib-unbreakable-not-found"));
-$event->getPlayer()->sendPopup($popup);
+$event->getPlayer()->sendPopup(1,$popup);
 }
 }
  else {
 
  $popup = str_replace("&", "§", $this->config->get("permission-ib-use-silktouch-not-found"));
- $event->getPlayer()->sendPopup($popup);
+ $event->getPlayer()->sendPopup(1,$popup);
 
 }
 }
 else {
 
 $popup = str_replace("&", "§", $this->config->get("ib-silktouch-not-enabled"));
-$event->getPlayer()->sendPopup($popup);
+$event->getPlayer()->sendPopup(1,$popup);
 }
 }
  //Touch with custom drops -> set in drops.yml
@@ -313,12 +333,12 @@ $event->getBlock()->getLevel()->dropItem(new Vector3($event->getBlock()->getX(),
  }
  else {
  $popup = str_replace("&", "§", $this->config->get("permission-ib-use-touch-not-found"));
- $event->getPlayer()->sendPopup($popup);
+ $event->getPlayer()->sendPopup(1,$popup);
  }
  }
  else {
  $popup = str_replace("&", "§", $this->config->get("ib-touch-not-enabled"));
- $event->getPlayer()->sendPopup($popup);
+ $event->getPlayer()->sendPopup(1,$popup);
  
  }
  } 
