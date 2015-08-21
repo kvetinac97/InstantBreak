@@ -378,6 +378,13 @@ Coal Block: 173
 Grass Path: 198
 Stonecutter: 245
 Nether Reactor: 247
+
+#New blocks from PM 1.6 - MCPE 0.12.1
+#Note that for now, e.g. Mob heads aren't here
+
+Enchanting_table: 116
+Anvil: 145
+
 # © 2015 kvetinac97
 #===ALL RIGHTS RESERVED===
 ...
