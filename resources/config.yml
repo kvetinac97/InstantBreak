@@ -1,8 +1,8 @@
 ---
 #If there is any error in config, plugin'll repair it with default values 
-#Version (write 1)
+#Version - don't change the value!
 
-version: "1"
+version: "2"
 
 #Set if silktouch/normal touch is enabled
 #Silktouch drops the same block you break (leaves, glass...)
@@ -39,6 +39,8 @@ touch-item: "278"
 
 permission-ib-on-not-found: "&cYou don't have permission for command /ib-on!"
 permission-ib-off-not-found: "&cYou don't have permission for command /ib-off!"
+permission-ib-other-on-not-found: "&cYou don't have permission for command /ib-on » <other> «"
+permission-ib-other-off-not-found: "&cYou don't have permission for command /ib-off » <other> «"
 ib-on-already-used: "&c You can't enable InstantBreak twice!"
 ib-off-already-used: "&c You can't disable InstantBreak twice!"
 ib-on-enabled-msg: "&o&7Now hold {silktouch-item} or {touch-item} for InstantBreaking"
