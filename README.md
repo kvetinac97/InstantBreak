@@ -1,11 +1,12 @@
-InstantBreak
- by @kvetinac97
+InstantBreak by @kvetinac97
 ======================================
 «Tap and break!
 »
 
 WARNING!!! This version is not-backwards compatible!
 If you're using PocketMine v1.5, use v2.1.0
+
+<h3>New!!! Now, you can donate for support me! Donate <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XQ5TDS9GZ38T2">>>HERE<<</a></h3>
 
 InstantBreak is PocketMine-MP plugin
 How it works?
