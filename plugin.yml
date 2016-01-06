@@ -1,19 +1,23 @@
 name: InstantBreak
 main: kvetinac97\Main
-api: [1.13.0]
+api: [1.12.0]
 load: STARTUP
 description: Tap and break!
-version: 2.2.0
+version: 3.0.0
 author: kvetinac97
 
 commands:
+  ib:
+    description: Main InstantBreak Command
+    usage: "/ib <on|off> <mode> <player>"
+    permission: ib.command
   ib-on:
     description: Enable InstantBreak
-    usage: "/ib-on <player>"
+    usage: "/ib-on <mode> <player>"
     permission: ib.command.on
   ib-off:
-    description: Disabled InstantBreak
-    usage: "/ib-off <player>"
+    description: Disable InstantBreak
+    usage: "/ib-off <mode> <player>"
     permission: ib.command.off
 
 permissions:
@@ -25,12 +29,41 @@ permissions:
      default: op
      description: "Allow all InstantBreak commands"
      children:
-      ib.command.on:
+      ib.command:
        default: op
-       description: "Can enable InstantBreak for yourself"
-      ib.command.off:
-       default: op
-       description: "Can disable InstantBreak for yourself"
+       description: "Can use InstantBreak command"
+       children:
+        ib.command.silktouch:
+         default: op
+         description: "Can enable|disable SilkTouch mode for yourself"
+         children:
+          ib.command.silktouch.on:
+           default: op
+           description: "Can enable SilkTouch mode for yourself"
+          ib.command.silktouch.off:
+           default: op
+           description: "Can disable SilkTouch mode for yourself"
+        ib.command.touch:
+          default: op
+          description: "Can enable|disable Touch mode for yourself"
+          children:
+           ib.command.touch.on:
+            default: op
+            description: "Can enable Touch mode for yourself"
+           ib.command.touch.off:
+            default: op
+            description: "Can disable Touch mode for yourself"
+        ib.command.custom:
+          default: op
+          description: "Can enable|disable Custom mode for yourself"
+          children:
+           ib.command.custom.on:
+            default: op
+            description: "Can enable Custom mode for yourself"
+           ib.command.custom.off:
+            default: op
+            description: "Can disable Custom mode for yourself"
+
     ib.other:
      default: op
      description: "Allow all InstantBreak commands for other players"
@@ -38,6 +71,10 @@ permissions:
       ib.other.on:
        default: op
        description: "Allow enable InstantBreak for other players"
+       children:
+        ib.other.on.silktouch:
+         default: op
+
       ib.other.off:
        default: op
        description: "Allow disable InstantBreak for other players"

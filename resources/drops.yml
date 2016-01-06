@@ -1,14 +1,21 @@
 ---
-#Write your custom Block Drops on "touch" InstantBreaking
-#If you want blocks to drop like without any InstantBreaking, don't change anything
-#If you write bad ID, block won't drop anything
-#Currently supports all blocks from Creative inventory + some additions
-#If your item has damage, write it under block:
-#If you want to drop any specified amount of items (2,3,4...), write it under damage/block:
-#If you don't want block to drop anything, set ID/Count 0
-#Orange Wool: 35
-#Orange Wool_Damage: 1
-#Orange Wool_Count: 3
+
+# drops.yml file for InstantBreak by © kvetinac97 2016
+# You can copy or modify this file without restrictions
+# (You must write that it was originally created by kvetinac97
+
+# Write your Block Drops on "custom" InstantBreaking
+# If you want blocks to drop like in "touch" mode, don't change anything
+# If you write bad ID, block won't drop anything
+
+# Currently supports all blocks from Creative inventory + some additions
+# If your item has damage, write it under block:
+# If you want to drop any specified amount of items (2,3,4...), write it under damage/block:
+# If you don't want block to drop anything, set ID/Count 0
+
+# Orange Wool: 35
+# Orange Wool_Damage: 1
+# Orange Wool_Count: 3
 
 #Stone-blocks
 
@@ -379,12 +386,7 @@ Grass Path: 198
 Stonecutter: 245
 Nether Reactor: 247
 
-#New blocks from PM 1.6 - MCPE 0.12.1
-#Note that for now, e.g. Mob heads aren't here
-
 Enchanting_table: 116
 Anvil: 145
 
-# © 2015 kvetinac97
-#===ALL RIGHTS RESERVED===
 ...
